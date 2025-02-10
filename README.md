@@ -9,10 +9,10 @@ This is an active paper/project that I currently working on at the moment and i 
 Specific versions must be used to prevent conflicts from dependencies requiring different package versions.
 
 ## Requirements
-*Python 3.7+
-*Julia 1.6
-*ripser
-*persim
-*scikit-learn
-*NumPy
-*Matplotlib
+* Python 3.7+
+* Julia 1.6
+* ripser
+* persim
+* scikit-learn
+* NumPy
+* Matplotlib
