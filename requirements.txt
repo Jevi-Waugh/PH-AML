@@ -1,0 +1,8 @@
+## Requirements
+* Python 3.7+
+* Julia 1.6
+* ripser
+* persim
+* scikit-learn
+* NumPy
+* Matplotlib
