@@ -1,3 +1,7 @@
 /explore.jl
-/src
 /tests
+/notebooks/PHAML.py
+/src/feature_extraction.jl
+/src/logistic_regress.py
+/src/ph_computation.jl
+/src/svm.py
