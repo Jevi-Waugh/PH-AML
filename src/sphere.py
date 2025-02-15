@@ -22,9 +22,9 @@ def Sphere(pts: int=5) -> None:
         pts (int): Define number of points in each direction. Defaults to 5.
     """
 
-    # Create 1d vectors for both angles
-    theta = np.linspace(0, np.pi, pts)  # Longitude 
-    azimuthal = np.linspace(0, 2*(np.pi), pts)  # Latitude (phi)
+    # # Create 1d vectors for both angles
+    theta = np.linspace(0, 2*(np.pi), pts)  # Longitude 
+    azimuthal = np.linspace(0, (np.pi), pts)  # Latitude (phi)
     
     theta, azimuthal = np.meshgrid(theta, azimuthal)
     
@@ -32,23 +32,17 @@ def Sphere(pts: int=5) -> None:
     y = np.sin(azimuthal) * np.sin(theta)
     z = np.cos(azimuthal)
 
-    # print("x shape:", x.shape)
-    # print("y shape:", y.shape)
-    # print("z shape:", z.shape)
-
-    # now we want every row to be x,y,z in a vector
-    x = x.flatten()
-    y = y.flatten()
-    z = z.flatten()
-
-    # Stack them horizontally and transpose to get x, y, z
-    sphere_matrix = np.vstack((x,y,z)).T
+    # Stack them horizontally and transpose to get x, y, z in individual lists
+        #sphere_matrix = np.vstack((x,y,z)).T
+    sphere_matrix = np.vstack((x.flatten(),y.flatten(),z.flatten()))
 
     # Exporting as a CSV file
-    sphere_df = pd.DataFrame(sphere_matrix, columns=['x','y','z'])
+    sphere_df = pd.DataFrame(sphere_matrix)
+    
     with open("folder_path.txt", "r") as file:
         folder = file.read()
     folder = os.path.join(folder, "data")
     file_path = os.path.join(folder, "sphere_coordinates.csv")
-    sphere_csv = sphere_df.to_csv(file_path,index=False)
+    
+    sphere_csv = sphere_df.to_csv(file_path,index=False,header=False)
 
