@@ -46,3 +46,10 @@ def Sphere(pts: int=5) -> None:
     
     sphere_csv = sphere_df.to_csv(file_path,index=False,header=False)
 
+
+def main():
+    Sphere(12)
+    
+    
+if __name__ == "__main__":
+    main()
