@@ -7,7 +7,7 @@ This is an active paper/project that I am currently working on at the moment.
 
 ## Installation
 Specific versions must be used to prevent conflicts from dependencies requiring different package versions.
-
+ 
 ## Requirements
 * Python 3.7+
 * Julia 1.6
