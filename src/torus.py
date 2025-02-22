@@ -6,7 +6,7 @@
 import numpy as np
 import pandas as pd
 
-def generate_torus(n_points=500, R=2.0, r=1.0):
+def generate_torus(n_points=100, R=2.0, r=1.0):
     """
     Generate a torus in 3D coordinates with all x values in the first row,
     all y values in the second row, and all z values in the third row.
@@ -29,8 +29,8 @@ def generate_torus(n_points=500, R=2.0, r=1.0):
 
     return np.array([x, y, z])  # Ensuring correct row-major format (3 x N)
 
-# Generate torus point cloud
 torus_points = generate_torus(n_points=1000)
+# Generate torus point cloud
 
 # Save the correctly formatted CSV file
 csv_filename = "torus_points_corrected.csv"
