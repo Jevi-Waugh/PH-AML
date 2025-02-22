@@ -14,11 +14,13 @@ end
 
 function feature_extraction(PH_data)
     """
-    Extracts data from PH.
+    Extracts data from PH such as persistence lifetimes.
     Data : barcode, persistence Landscape.
     """
     b = barcode(PH_data, dim=0)
-    writedlm("barcode", b)
+    N = size(PH_data, 1)
+    P_lifetimes = [b[i, 2] - b[i, 1] for i in 1:N if isfinite(b[i, 2])]
+    writedlm("barcode", P_lifetimes, ',')
 end
 
 
