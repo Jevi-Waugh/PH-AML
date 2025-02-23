@@ -39,16 +39,17 @@ def Sphere(pts: int=5) -> None:
     # Exporting as a CSV file
     sphere_df = pd.DataFrame(sphere_matrix)
     
-    with open("folder_path.txt", "r") as file:
-        folder = file.read()
-    folder = os.path.join(folder, "data")
-    file_path = os.path.join(folder, "sphere_coordinates.csv")
-    
+    # with open("folder_path.txt", "r") as file:
+    #     folder = file.read()
+    # folder = os.path.join(folder, "data/")
+    # file_path = os.path.join(folder, "sphere_coordinates_1.csv")
+    file_path = "C:/Users/jevin/Documents/Documents/Education/Self-Learning/Persistant Homology/PHAML/data/sphere_coordinates_1.csv"
     sphere_csv = sphere_df.to_csv(file_path,index=False,header=False)
 
 
 def main():
-    Sphere(12)
+    Sphere(8)
+    # was 12 pts for sphere 1
     
     
 if __name__ == "__main__":

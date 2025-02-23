@@ -29,11 +29,11 @@ def generate_torus(n_points=100, R=2.0, r=1.0):
 
     return np.array([x, y, z])  # Ensuring correct row-major format (3 x N)
 
-torus_points = generate_torus(n_points=1000)
+torus_points = generate_torus(n_points=500)
 # Generate torus point cloud
 
 # Save the correctly formatted CSV file
-csv_filename = "torus_points_corrected.csv"
+csv_filename = "torus_points_2.csv"
 np.savetxt(csv_filename, torus_points, delimiter=",", fmt="%.6f")
 
 # Return CSV file path
