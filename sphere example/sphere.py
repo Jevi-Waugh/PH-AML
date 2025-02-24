@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 
-def Sphere(pts: int=5) -> None:
+def Sphere(pts: int=5, iter: int=None) -> None:
     """ Generates points on the surface of a unit sphere using spherical coordinates.
 
     x = sin(φ) cos(θ)
@@ -43,14 +43,20 @@ def Sphere(pts: int=5) -> None:
     #     folder = file.read()
     # folder = os.path.join(folder, "data/")
     # file_path = os.path.join(folder, "sphere_coordinates_1.csv")
-    file_path = "C:/Users/jevin/Documents/Documents/Education/Self-Learning/Persistant Homology/PHAML/data/sphere_coordinates_1.csv"
+    file_path = f"C:/Users/jevin/Documents/Documents/Education/Self-Learning/Persistant Homology/PHAML/data/sphere/sphere_coordinates_{iter}.csv"
     sphere_csv = sphere_df.to_csv(file_path,index=False,header=False)
 
 
 def main():
-    Sphere(8)
-    # was 12 pts for sphere 1
     
+    # was 12 pts for sphere 1
+    # was 8 pts for sphere 2
+    N = 10 # 10 spheres
+    for i in range(0,N):
+        Sphere(i+6, iter=i)
+
+    
+    # 6,7,8,12,15
     
 if __name__ == "__main__":
     main()
