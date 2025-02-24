@@ -44,12 +44,12 @@ def generate_torus(n_points=100, R=2.0, r=1.0, iter=None):
 
 def main():
   
-    N = 10 # 10 spheres
+    N = 10 # 10 torus
     for i in range(0,N):
         generate_torus(i+500, iter=i)
 
     
-    # 500. 1400
+    # 500 -1400
     
 if __name__ == "__main__":
     main()
