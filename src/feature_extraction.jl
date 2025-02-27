@@ -13,7 +13,7 @@ function persistent_homology(csv_data, dim)
     return eirene(point_cloud, maxdim=dim, model="pc")
 end
 
-function feature_extraction(PH_data, num,folder,type)
+function feature_extraction(PH_data, num,folder)
     """
     Extracts data from PH such as persistence lifetimes.
     Data : barcode, persistence Landscape.
@@ -40,20 +40,20 @@ function persistent_statistics(lifetimes,num,folder,type)
     writedlm(folder * "/$(type)_stats/persistence_statistics_$(num).csv", permutedims(stat_features), ',')
 end
 
-folder = "C:/Users/jevin/Documents/Documents/Education/Self-Learning/Persistant Homology/PHAML/data/"
+folder = readdlm("folder_path.txt", '\n', String)
 for i in 0:9
-    csv_data = folder * "torus/torus_coordinates_$(i).csv"
+    csv_data = folder[1] * "torus/torus_coordinates_$(i).csv"
     # julia has a soft scope
     local PH = persistent_homology(csv_data, 1)
-    local lifetimes = feature_extraction(PH,i,folder)
-    persistent_statistics(lifetimes,i,folder, "torus")
+    local lifetimes = feature_extraction(PH,i,folder[1])
+    persistent_statistics(lifetimes,i,folder[1], "torus")
 end
 
 for i in 0:9
-    csv_data = folder * "sphere/sphere_coordinates_$(i).csv"
+    csv_data = folder[1] * "sphere/sphere_coordinates_$(i).csv"
     # julia has a soft scope
     local PH = persistent_homology(csv_data, 1)
-    local lifetimes = feature_extraction(PH,i,folder)
-    persistent_statistics(lifetimes,i,folder, "sphere")
+    local lifetimes = feature_extraction(PH,i,folder[1])
+    persistent_statistics(lifetimes,i,folder[1], "sphere")
     
 end
