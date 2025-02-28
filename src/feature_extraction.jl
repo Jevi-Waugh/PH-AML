@@ -59,3 +59,19 @@ for i in 0:9
     persistent_statistics(lifetimes,i,folder[1], "sphere")
     
 end
+
+s_folder = folder[1] * "/sphere_stats"
+for i in 0:9
+    local s_line = readline(s_folder * "/persistence_statistics_$(i).csv")
+    open(folder[1] * "ml_train/train.csv", "a") do f
+        write(f, s_line * "\n")
+    end
+end
+
+t_folder = folder[1] * "/torus_stats"
+for i in 0:9
+    local t_line = readline(t_folder * "/persistence_statistics_$(i).csv")
+    open(folder[1] * "ml_train/train.csv", "a") do f
+        write(f, t_line * "\n")
+    end
+end
