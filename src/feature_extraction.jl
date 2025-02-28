@@ -34,8 +34,10 @@ function persistent_statistics(lifetimes,num,folder,type)
     sum_lifetime = sum(lifetimes)        # Total persistence sum
 
     # Store as a feature vector
-    stat_features = [mean_lifetime, std_lifetime, max_lifetime, sum_lifetime]
-
+    # will assign -1 to any unproposed classes
+    class = type == "sphere" ? 0 : type == "torus" ? 1 : -1 
+    stat_features = [mean_lifetime, std_lifetime, max_lifetime, sum_lifetime,class]
+    
     # Save to CSV for ML training
     writedlm(folder * "/$(type)_stats/persistence_statistics_$(num).csv", permutedims(stat_features), ',')
 end
