@@ -10,8 +10,7 @@ This is an active paper/project that I am currently working on at the moment.
 * I  will use dimensionality reduction to visualise the decision boundary and plot it as a I have only 4 features
 * this will allow me to see if SVM really did really seperate sphere and torus 
 * and if it did, then that's really great progress with small similar data
-
-#  Then we can experiment as proposed in the abstract, to determine high-dimensional holes in data
+* Then we can experiment as proposed in the abstract, to determine high-dimensional holes in data
 
 ## Installation
 Specific versions must be used to prevent conflicts from dependencies requiring different package versions.
