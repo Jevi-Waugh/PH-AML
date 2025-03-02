@@ -3,7 +3,7 @@ import pandas as pd
 import os
 
 
-def Sphere(pts: int=5, iter: int=None) -> None:
+def Sphere(pts: int=5, iter: int=None, noise_level=0.0) -> None:
     """ Generates points on the surface of a unit sphere using spherical coordinates.
 
     x = sin(φ) cos(θ)
@@ -35,6 +35,10 @@ def Sphere(pts: int=5, iter: int=None) -> None:
     # Stack them horizontally and transpose to get x, y, z in individual lists
         #sphere_matrix = np.vstack((x,y,z)).T
     sphere_matrix = np.vstack((x.flatten(),y.flatten(),z.flatten()))
+    # Add noise if specified
+    if noise_level > 0:
+        noise = np.random.normal(0, noise_level, sphere_matrix.shape)
+        sphere_matrix = sphere_matrix + noise
 
     # Exporting as a CSV file
     sphere_df = pd.DataFrame(sphere_matrix)
