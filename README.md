@@ -6,7 +6,7 @@ Conventional Machine learning models often rely on purely statistical data while
 Update
 This is an active paper/project that I am currently working on at the moment.
 28/02/2025 
-* SVM is currently giving 100% accuracy which looks to good to be true but it could be true.
+* SVM is currently giving 100% accuracy which looks to good to be true.
 * I  will use dimensionality reduction to visualise the decision boundary and plot it as a I have only 4 features
 * this will allow me to see if SVM really did really seperate sphere and torus 
 * and if it did, then that's really great progress with small similar data
